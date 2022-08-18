@@ -124,6 +124,11 @@
       <scope>test</scope>
       <version>3.23.1</version>
     </dependency>
+    <dependency>
+      <artifactId>dddcore</artifactId>
+      <groupId>com.ryan101.bank</groupId>
+      <version>${project.version}</version>
+    </dependency>
   </dependencies>
 
   <modelVersion>4.0.0</modelVersion>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <artifactId>dddcore</artifactId>
+
+  <build>
+    <finalName>dddcore</finalName>
+    <plugins>
+
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <argLine>--enable-preview</argLine>
+          <testFailureIgnore>false</testFailureIgnore>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <groupId>org.junit.jupiter</groupId>
+            <version>${junit.jupiter.engine.version}</version>
+          </dependency>
+        </dependencies>
+        <groupId>org.apache.maven.plugins</groupId>
+        <version>${maven.surefire.plugin.version}</version>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <annotationProcessorPaths>
+            <path>
+              <artifactId>mapstruct-processor</artifactId>
+              <groupId>org.mapstruct</groupId>
+              <version>${org.mapstruct.version}</version>
+            </path>
+          </annotationProcessorPaths>
+          <compilerArgs>
+            <arg>--enable-preview</arg>
+            <arg>--add-modules</arg>
+            <arg>java.base</arg>
+            <arg>-parameters</arg>
+          </compilerArgs>
+          <compilerArgument>-Xlint:unchecked</compilerArgument>
+          <release>${maven.compiler.target}</release>
+        </configuration>
+        <groupId>org.apache.maven.plugins</groupId>
+        <version>${maven.compiler.plugin.version}</version>
+      </plugin>
+
+
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <artifactId>guava</artifactId>
+      <groupId>com.google.guava</groupId>
+      <version>29.0-jre</version>
+    </dependency>
+    <dependency>
+      <artifactId>spring-data-jpa</artifactId>
+      <groupId>org.springframework.data</groupId>
+      <scope>compile</scope>
+      <version>2.5.6</version>
+    </dependency>
+    <dependency>
+      <artifactId>jackson-databind</artifactId>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <scope>compile</scope>
+      <version>2.13.0</version>
+    </dependency>
+    <dependency>
+      <artifactId>jackson-module-parameter-names</artifactId>
+      <groupId>com.fasterxml.jackson.module</groupId>
+      <scope>compile</scope>
+      <version>2.13.0</version>
+    </dependency>
+    <dependency>
+      <artifactId>jackson-datatype-jdk8</artifactId>
+      <groupId>com.fasterxml.jackson.datatype</groupId>
+      <scope>compile</scope>
+      <version>2.13.0</version>
+    </dependency>
+    <dependency>
+      <artifactId>jackson-datatype-jsr310</artifactId>
+      <groupId>com.fasterxml.jackson.datatype</groupId>
+      <scope>compile</scope>
+      <version>2.13.0</version>
+    </dependency>
+  </dependencies>
+  <modelVersion>4.0.0</modelVersion>
+  <name>dddcore</name>
+
+
+  <packaging>jar</packaging>
+
+  <parent>
+    <artifactId>bank</artifactId>
+    <groupId>com.ryan101.bank</groupId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+  <properties>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+  </properties>
+</project>
