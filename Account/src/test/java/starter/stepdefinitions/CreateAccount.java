@@ -2,8 +2,8 @@ package starter.stepdefinitions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import com.ryan101.bank.Account.BankAccount;
-import com.ryan101.bank.Account.Custom;
+import com.ryan101.account.BankAccount;
+import com.ryan101.account.Custom;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

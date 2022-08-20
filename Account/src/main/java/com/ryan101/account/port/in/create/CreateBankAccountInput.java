@@ -1,4 +1,4 @@
-package com.ryan101.bank.usecase;
+package com.ryan101.account.port.in.create;
 
 public class CreateBankAccountInput {
 

@@ -129,7 +129,178 @@
       <groupId>com.ryan101.bank</groupId>
       <version>${project.version}</version>
     </dependency>
+    <dependency>
+      <artifactId>mapstruct</artifactId>
+      <groupId>org.mapstruct</groupId> <!-- use mapstruct-jdk8 for Java 8 or higher -->
+      <version>${org.mapstruct.version}</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>jersey-container-servlet-core</artifactId>
+      <groupId>org.glassfish.jersey.containers</groupId>
+      <!-- use the following artifactId if you don't need servlet 2.x compatibility -->
+      <!-- artifactId>jersey-container-servlet</artifactId -->
+    </dependency>
+    <dependency>
+      <artifactId>plexus-utils</artifactId>
+      <groupId>org.codehaus.plexus</groupId>
+      <scope>test</scope>
+      <version>3.0</version>
+    </dependency>
+    <dependency>
+      <artifactId>jersey-hk2</artifactId>
+      <groupId>org.glassfish.jersey.inject</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>jersey-media-moxy</artifactId>
+      <groupId>org.glassfish.jersey.media</groupId>
+    </dependency>
+
+    <dependency>
+      <artifactId>javax.servlet-api</artifactId>
+      <groupId>javax.servlet</groupId>
+      <scope>provided</scope>
+      <version>4.0.0</version>
+    </dependency>
+    <dependency>
+      <artifactId>json</artifactId>
+      <groupId>org.json</groupId>
+      <version>20080701</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>gson</artifactId>
+      <groupId>com.google.code.gson</groupId>
+      <version>2.8.6</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>rome</artifactId>
+      <groupId>rome</groupId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <artifactId>dom4j</artifactId>
+      <groupId>dom4j</groupId>
+      <version>1.6.1</version>
+    </dependency>
+    <dependency>
+      <artifactId>guava</artifactId>
+      <groupId>com.google.guava</groupId>
+      <version>29.0-jre</version>
+    </dependency>
+    <dependency>
+      <artifactId>javax.websocket-api</artifactId>
+      <groupId>javax.websocket</groupId>
+      <scope>provided</scope>
+      <version>1.1</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>spring-boot-starter-parent</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <type>pom</type>
+      <version>${springboot.version}</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>spring-boot-starter</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <version>${springboot.version}</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <version>${springboot.version}</version>
+    </dependency>
+
+
+    <dependency>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <exclusions>
+        <exclusion>
+          <artifactId>json</artifactId>
+          <groupId>org.json</groupId>
+        </exclusion>
+
+        <!-- exclude junit 4 -->
+        <exclusion>
+          <artifactId>junit</artifactId>
+          <groupId>junit</groupId>
+        </exclusion>
+
+        <exclusion>
+          <artifactId>junit-vintage-engine</artifactId>
+          <groupId>org.junit.vintage</groupId>
+        </exclusion>
+
+      </exclusions>
+      <groupId>org.springframework.boot</groupId>
+      <version>${springboot.version}</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>h2</artifactId>
+      <groupId>com.h2database</groupId>
+      <scope>runtime</scope>
+      <version>1.4.200</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>junit-jupiter</artifactId>
+      <groupId>org.junit.jupiter</groupId>
+      <scope>test</scope>
+      <version>${junit.jupiter.api.version}</version>
+    </dependency>
+
+
+    <dependency>
+      <artifactId>assertj-core</artifactId>
+      <groupId>org.assertj</groupId>
+      <scope>test</scope>
+      <version>${assertj.core.version}</version>
+    </dependency>
+
+
+    <dependency>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <scope>compile</scope>
+      <version>${springboot.version}</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.awaitility/awaitility -->
+    <dependency>
+      <artifactId>awaitility</artifactId>
+      <groupId>org.awaitility</groupId>
+      <scope>test</scope>
+      <version>${awaitility.version}</version>
+    </dependency>
+    <dependency>
+      <artifactId>db-client-java</artifactId>
+      <groupId>com.eventstore</groupId>
+      <scope>test</scope>
+      <version>2.0.0</version>
+    </dependency>
+    <dependency>
+      <artifactId>junit-jupiter-api</artifactId>
+      <groupId>org.junit.jupiter</groupId>
+      <version>5.8.2</version>
+    </dependency>
   </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <artifactId>jersey-bom</artifactId>
+        <groupId>org.glassfish.jersey</groupId>
+        <scope>import</scope>
+        <type>pom</type>
+        <version>${jersey.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <modelVersion>4.0.0</modelVersion>
 

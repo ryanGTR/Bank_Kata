@@ -1,4 +1,4 @@
-package com.ryan101.bank.Account;
+package com.ryan101.account;
 
 public class Custom {
 
@@ -9,11 +9,6 @@ public class Custom {
 
   public Custom(String name) {
     this.name = name;
-  }
-
-  public Custom setId(String id) {
-    this.id = id;
-    return this;
   }
 
   public Custom setEmail(String email) {
@@ -28,5 +23,14 @@ public class Custom {
 
   public String getName() {
     return name;
+  }
+
+  public String getId() {
+    return id;
+  }
+
+  public Custom setId(String id) {
+    this.id = id;
+    return this;
   }
 }
